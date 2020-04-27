@@ -3,11 +3,11 @@
 ## Team Members: Cameron Taylor and Ravinder Singh
 
 ## Deliverables
-* I will also need a report (ipynb) answering the question, "Why are our customers churning?" 
+* A report (ipynb) answering the question, "Why are our customers churning?" 
 
 * CSV with the customer_id, probability of churn, and the prediction of churn (1=churn, 0=not_churn).
 
-* I also need 1-3 google slides (+ title) that illustrates how your model works, including the features being used
+*  1-3 google slides (+ title) that illustrates how your model works, including the features being used
 
 * A .py file that will take in a new dataset, and perform all the transformations necessary to run the model you have developed on this new dataset to provide probabilities and predictions.
 
