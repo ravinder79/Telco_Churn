@@ -19,6 +19,9 @@ from sklearn.metrics import auc, roc_curve, roc_auc_score, precision_recall_curv
 
 
 def classification_summary(X, y, f, t):
+    '''
+    Returns classification report of a model
+    '''
     y_pred = f.predict(X)
     y_pred_proba = f.predict_proba(X)
     y_pred_proba = pd.DataFrame(y_pred_proba, columns = ['no churn', 'churn'])
@@ -26,6 +29,9 @@ def classification_summary(X, y, f, t):
     print(classification_report(y, yhat.churn))
 
 def generate_csv(X_df, df,f, t):
+    '''
+    Generates a csv showing churn prediction and churn probability for each customer
+    '''
     y_pred_proba = f.predict_proba(X_df)
     y_pred_proba = pd.DataFrame(y_pred_proba, columns = ['no churn', 'churn_prob'], index = X_df.index)
     y_pred_proba['churn_prediction'] = (y_pred_proba.churn_prob > t).astype(int) 

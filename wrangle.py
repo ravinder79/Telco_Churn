@@ -4,6 +4,9 @@ import sklearn
 
 
 def wrangle_telco(df):
+    '''
+    Performs several transformations in order to clean up data and returns the cleaned dataframe
+    '''
     df['total_charges'] = df['total_charges'].str.strip()
     df = df.replace(r'^\s*$', np.nan, regex=True)
     df = df.dropna()

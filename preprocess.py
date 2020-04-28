@@ -4,6 +4,9 @@ from sklearn.preprocessing import LabelEncoder, OneHotEncoder, MinMaxScaler
 import pandas as pd
 
 def encode(df, l):
+    '''
+    OneHot encodes the data in a column or columns
+    '''
     encoder = sklearn.preprocessing.OneHotEncoder(sparse = False)
     encoder.fit(df[l])
     m = encoder.transform(df[l])
@@ -13,6 +16,9 @@ def encode(df, l):
     return df
 
 def scale_minmax(train, column_list):
+    '''
+    MinMax scales the data in a column or columns
+    '''
     scaler = MinMaxScaler()
     column_list_scaled = [col + '_scaled' for col in column_list]
     train_scaled = pd.DataFrame(scaler.fit_transform(train[column_list]), 
@@ -23,6 +29,9 @@ def scale_minmax(train, column_list):
     return train
 
 def features(train, validate, test, l):
+    '''
+    Splits train, validate, and test sets into their respective X and y dataframes for use in modeling
+    '''
     y_train = train[['churn']]
     y_validate = validate[['churn']]
     y_test = test[['churn']]
