@@ -61,6 +61,8 @@ payment_type         :       7043 non-null object (type of payment method used b
 * knn_lesson_util.py
 * Telco_Churn_Final.ipynb (Main notebook)
 
+* There is code in Jupyter Notebook which automatically genereates a CSV file when we run the notebook named 'final_csv.csv'
+
 # Executive Summary
 * We created a logistic regression model to predict customers who are likely to churn.
 * The model is able to correctly predict 80% of customers who actually churn.
